@@ -9,7 +9,9 @@
       <p style="opacity: 0.4;"><strike><%= task.content %></strike></p>
     </div>
     <div class="trash">
-      <%= link_to "Delete", project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
     </div>
   <% else %>
     <div class="complete">
@@ -21,7 +23,9 @@
       <p><%= task.content %></p>
     </div>
     <div class="trash">
-      <%= link_to "Delete", project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
     </div>
   <% end %>  
 </div>
